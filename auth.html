@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Java Mastery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="auth-page">
+    <!-- Ambient Background -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-home-btn glass" title="Back to Home"
+        style="position: absolute; top: 2rem; left: 2rem; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; border-radius: 50%;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </a>
+
+    <div class="auth-container glass">
+        <!-- Login View -->
+        <div id="login-view" class="auth-view active">
+            <div class="auth-header">
+                <h1 class="auth-title">Welcome Back</h1>
+                <p class="auth-subtitle">Sign in to continue your learning journey.</p>
+            </div>
+            <form id="login-form">
+                <div class="auth-form-group">
+                    <label class="auth-label" for="login-email">Email Address</label>
+                    <input type="email" id="login-email" class="auth-input" placeholder="you@example.com" required>
+                </div>
+                <div class="auth-form-group">
+                    <label class="auth-label" for="login-password">Password</label>
+                    <input type="password" id="login-password" class="auth-input" placeholder="••••••••" required>
+                    <div style="text-align: right; margin-top: 0.5rem;">
+                        <a href="#" class="auth-link" style="font-size: 0.8rem; font-weight: 500;">Forgot Password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary auth-btn">Sign In</button>
+            </form>
+            <div class="auth-switch">
+                Don't have an account? <span class="auth-link" id="go-to-signup">Sign up here</span>
+            </div>
+        </div>
+
+        <!-- Signup View -->
+        <div id="signup-view" class="auth-view">
+            <div class="auth-header">
+                <h1 class="auth-title">Create Account</h1>
+                <p class="auth-subtitle">Join us and master Java today.</p>
+            </div>
+            <form id="signup-form">
+                <div class="auth-form-group">
+                    <label class="auth-label" for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="auth-input" placeholder="Jane Doe" required>
+                </div>
+                <div class="auth-form-group">
+                    <label class="auth-label" for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" class="auth-input" placeholder="you@example.com" required>
+                </div>
+                <div class="auth-form-group">
+                    <label class="auth-label" for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="auth-input"
+                        placeholder="Create a strong password" required>
+                </div>
+                <button type="submit" class="btn btn-primary auth-btn">Create Account</button>
+            </form>
+            <div class="auth-switch">
+                Already have an account? <span class="auth-link" id="go-to-login">Sign in</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

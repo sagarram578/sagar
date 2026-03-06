@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Player | Java Mastery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="player-layout">
+        <!-- Left Sidebar: Curriculum -->
+        <aside class="player-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="back-btn" title="Back to Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </a>
+                <div>
+                    <h3 style="font-size: 1rem; font-weight: 600;">Java Fundamentals</h3>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Instructor: Jane Doe</p>
+                </div>
+            </div>
+
+            <div class="course-progress">
+                <div class="progress-header">
+                    <span>Course Progress</span>
+                    <span style="color: var(--primary);">2/16 Lessons</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="curriculum" id="curriculum-container">
+                <!-- Rendered dynamically -->
+            </div>
+        </aside>
+
+        <!-- Main Content Area: Video & Details -->
+        <main class="player-main">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe id="youtube-player" src="https://www.youtube.com/embed/A74TOX803D0?rel=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="content-header">
+                    <h1 class="lesson-main-title">Setting up your environment</h1>
+                    <button class="btn btn-primary" style="padding: 0.5rem 1rem;">Next Lesson</button>
+                </div>
+
+                <div class="content-tabs">
+                    <button class="tab-btn active" data-target="overview">Overview</button>
+                    <button class="tab-btn" data-target="qa">Q&A</button>
+                    <button class="tab-btn" data-target="resources">Resources</button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="tab-pane active overview-content" id="overview">
+                    <h3>Lesson Summary</h3>
+                    <p>In this lesson, we cover the essentials of getting the Java Development Kit (JDK) installed on
+                        your machine. You will learn how to configure your system environment variables so that you can
+                        compile and run Java programs from any directory using the command line.</p>
+
+                    <h3>Key Concepts Covered:</h3>
+                    <ul style="padding-left: 1.5rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        <li>Downloading OpenJDK from official repositories</li>
+                        <li>Setting the <code>JAVA_HOME</code> variable</li>
+                        <li>Updating the system <code>PATH</code></li>
+                    </ul>
+
+                    <h3>Test Your Installation</h3>
+                    <p>Run the following command in your terminal to ensure everything is set up correctly:</p>
+                    <div class="code-block">
+                        <span class="kw">public class</span> <span class="typ">HelloWorld</span> {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">public static void</span> <span
+                            class="fn">main</span>(<span class="typ">String</span>[] args) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            class="typ">System</span>.out.println(<span class="str">"Hello, Java LMS!"</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="qa" style="color: var(--text-muted);">
+                    <h3>Community Q&A</h3>
+                    <p>Have questions about this lesson? Browse the questions asked by other students or ask a new one.
+                    </p>
+                    <div
+                        style="margin-top: 2rem; padding: 2rem; border: 1px dashed var(--border-color); border-radius: 8px; text-align: center;">
+                        <p>No questions asked yet. Be the first!</p>
+                        <button class="btn btn-outline" style="margin-top: 1rem;">Ask a Question</button>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="resources" style="color: var(--text-muted);">
+                    <h3>Downloadable Resources</h3>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#"
+                            style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="12"></line>
+                                <line x1="9" y1="15" x2="15" y2="15"></line>
+                            </svg>
+                            <div>
+                                <strong style="color: var(--text-main); display: block;">JDK Setup Guide (PDF)</strong>
+                                <span style="font-size: 0.8rem;">2.4 MB</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

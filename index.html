@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Mastery | Premium Learning Platform</title>
+  <meta name="description"
+    content="Master Java programming from basic fundamentals to enterprise architectures with our premium courses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Ambient Background -->
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar glass">
+    <a href="index.html" class="nav-brand">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);">
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      </svg>
+      JavaMastery
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#">Learning Paths</a></li>
+      <li><a href="#">Community</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="auth.html" class="btn btn-outline"
+        style="border-radius: 9999px; padding: 0.5rem 1rem; text-decoration: none;">Sign In</a>
+      <div class="avatar"></div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="badge">New: Spring Boot 3 Masterclass Available</div>
+    <h1>Master <span class="text-gradient">Java Programming</span> at Every Level</h1>
+    <p>From fundamental syntax to advanced enterprise architectures, elevate your software engineering career with
+      beautifully crafted, interactive courses.</p>
+    <div class="hero-buttons">
+      <a href="#courses" class="btn btn-primary">Explore Curriculum</a>
+      <a href="#" class="btn btn-outline">View Learning Paths</a>
+    </div>
+  </header>
+
+  <!-- Courses Grid Section -->
+  <section id="courses" class="courses-section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Featured Content</h2>
+        <p class="section-subtitle">A curated selection of the finest Java courses tailored to your goals.</p>
+      </div>
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="beginner">Beginner</button>
+        <button class="filter-tab" data-filter="intermediate">Intermediate</button>
+        <button class="filter-tab" data-filter="advanced">Advanced</button>
+      </div>
+    </div>
+
+    <!-- Rendered dynamically via JavaScript -->
+    <div class="grid" id="courses-grid">
+      <!-- Cards will be injected here -->
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
