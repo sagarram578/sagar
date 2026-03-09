@@ -122,6 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setupAuthToggles();
   }
 
+  // 4. Setup Chatbot (available on all pages that include its HTML)
+  setupChatbot();
+
 });
 
 // --- AUTH PAGE LOGIC ---
@@ -317,4 +320,67 @@ function setupTabs() {
       document.getElementById(targetId).classList.add('active');
     });
   });
+}
+
+// --- CHATBOT LOGIC ---
+function setupChatbot() {
+  const toggleBtn = document.getElementById('chatbot-toggle');
+  const closeBtn = document.getElementById('chatbot-close');
+  const chatbotWindow = document.getElementById('chatbot-window');
+  const sendBtn = document.getElementById('chatbot-send');
+  const inputField = document.getElementById('chatbot-input');
+  const messagesContainer = document.getElementById('chatbot-messages');
+
+  if (!toggleBtn || !chatbotWindow) return;
+
+  toggleBtn.addEventListener('click', () => {
+    chatbotWindow.classList.toggle('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    chatbotWindow.classList.remove('open');
+  });
+
+  const responses = [
+    "That's a great question about Java! To understand that, you should review Object-Oriented principles.",
+    "I recommend checking out the 'Spring Boot 3 Core Architectures' course for related concepts.",
+    "In Java, memory management is handled by the Garbage Collector automatically, but it's good to understand variable scopes.",
+    "Make sure your JDK path is correctly set in your environment variables.",
+    "That sounds like a NullPointerException. Ensure your objects are properly initialized before accessing their methods!",
+    "Are you asking about interfaces vs abstract classes? Interfaces are contracts, while abstract classes can hold state.",
+    "Yes, you can run Java on almost any operating system, thanks to the JVM!"
+  ];
+
+  function sendMessage() {
+    const text = inputField.value.trim();
+    if (!text) return;
+
+    // Add user message
+    const userMsg = document.createElement('div');
+    userMsg.className = 'msg user-msg';
+    userMsg.innerText = text;
+    messagesContainer.appendChild(userMsg);
+
+    inputField.value = '';
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    // Simulate bot thinking
+    setTimeout(() => {
+      const botMsg = document.createElement('div');
+      botMsg.className = 'msg bot-msg';
+      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      botMsg.innerText = randomResponse;
+      messagesContainer.appendChild(botMsg);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }, 600 + Math.random() * 500); // delay between 0.6s and 1.1s
+  }
+
+  if (sendBtn && inputField) {
+    sendBtn.addEventListener('click', sendMessage);
+    inputField.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  }
 }

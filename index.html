@@ -34,8 +34,7 @@
       <li><a href="#">Community</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="auth.html" class="btn btn-outline"
-        style="border-radius: 9999px; padding: 0.5rem 1rem; text-decoration: none;">Sign In</a>
+      <a href="auth.html" class="btn btn-outline" style="padding: 0.5rem 1rem; text-decoration: none;">Sign In</a>
       <div class="avatar"></div>
     </div>
   </nav>
@@ -72,6 +71,29 @@
       <!-- Cards will be injected here -->
     </div>
   </section>
+
+  <!-- AI Chatbot UI -->
+  <div class="chatbot-container">
+    <button id="chatbot-toggle" class="chatbot-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </button>
+    <div id="chatbot-window" class="chatbot-window glass">
+      <div class="chatbot-header">
+        <h4>Java Tutor AI</h4>
+        <button id="chatbot-close" class="chatbot-close-btn">&times;</button>
+      </div>
+      <div id="chatbot-messages" class="chatbot-messages">
+        <div class="msg bot-msg">Hello! How can I help you with your Java learning today?</div>
+      </div>
+      <div class="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." />
+        <button id="chatbot-send" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
